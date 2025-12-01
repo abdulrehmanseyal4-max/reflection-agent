@@ -3,7 +3,6 @@ from typing import TypedDict, Annotated
 from langchain_core.messages import BaseMessage, HumanMessage
 from langgraph.graph import END, StateGraph
 from langgraph.graph import add_messages
-
 from chains import reflect_chain, generate_chain
 
 load_dotenv()
@@ -33,7 +32,7 @@ builder.set_entry_point(GENERATE)
 
 
 def should_continue(state: MessageGraph):
-    if len(state["messages"]) >= 5:
+    if len(state["messages"]) >= 4:
         return END
     return REFLECT
 
@@ -44,25 +43,11 @@ builder.add_conditional_edges(
 builder.add_edge(REFLECT, GENERATE)
 
 graph = builder.compile()
-print(graph.get_graph().draw_mermaid())
 
 
-def main():
-    print("Hello from reflection-agent!")
-    msg = HumanMessage(
-        content="""Make this tweet better:
-        -- newly Tool calling feature is seriously underrated
-
-        After a long wait, it's here- making the implementation of agents across different models with function calling-super easy.
-
-        Made a video covering their newest blog post
-        """
-    )
-
+def run_agent(user_input: str) -> str:
+    """Flask will call this function."""
+    msg = HumanMessage(content=user_input)
     response = graph.invoke({"messages": [msg]})
     final_msg = response["messages"][-1].content
-    print(final_msg)
-
-
-if __name__ == "__main__":
-    main()
+    return final_msg
