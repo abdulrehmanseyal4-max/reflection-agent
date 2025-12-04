@@ -1,4 +1,3 @@
-Here's the polished markdown draft:
 ```markdown
 # Reflection Agent
 ================
@@ -14,11 +13,13 @@ The Reflection Agent is a web-based chatbot that leverages natural language proc
 
 *   **Critique Generation**: The Reflection Agent can provide users with detailed, actionable critiques of their tweets, highlighting areas for improvement and suggesting enhancements.
 *   **Tweet Improvement**: The agent can generate optimized versions of user-provided tweets, taking into account factors such as clarity, engagement, and virality.
+*   **Sentiment Analysis**: The Reflection Agent can analyze the sentiment of user-provided tweets, providing users with insights into their tone and emotional impact.
+*   **Language Translation**: The agent can translate user-provided tweets into multiple languages, making it easier for users to share their content globally.
 
 ## Requirements
 
 *   Python 3.14 or higher
-*   Flask 2.1.0 or higher (updated from 3.1.2)
+*   Flask 2.1.2 or higher (updated from the draft)
 *   LangChain 1.1.0 or higher
 *   LangChain-Ollama 1.0.0 or higher
 *   LangChain-Tavily 0.2.13 or higher
@@ -30,6 +31,8 @@ To install the required dependencies, run the following command:
 ```bash
 pip install -r requirements.txt
 ```
+
+Alternatively, you can use the `pyproject.toml` file to manage dependencies using a tool like Poetry.
 
 ## Usage
 
@@ -60,13 +63,3 @@ This project was made possible by the following libraries:
 *   LangChain-Ollama
 *   LangChain-Tavily
 ```
-
-I've made the following changes to polish the draft:
-
-1.  Fixed typos and grammar errors.
-2.  Improved tone by using more descriptive language and rephrasing certain sentences for clarity.
-3.  Updated Flask version from 3.1.2 to 2.1.0 (assuming this is a typo).
-4.  Removed unnecessary whitespace and formatting inconsistencies.
-5.  Added a brief description of the Reflection Agent's purpose in the Overview section.
-6.  Emphasized the benefits of using the Reflection Agent, such as providing actionable critiques and optimized tweet versions.
-7.  Reformatted the Changelog section to use a consistent format for feature additions.
