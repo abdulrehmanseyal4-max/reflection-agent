@@ -8,7 +8,7 @@ from chains import reflect_chain, generate_chain
 load_dotenv()
 
 
-class MessageGraphevo(TypedDict):
+class MessageGraphevolution(TypedDict):
     messages: Annotated[list[BaseMessage], add_messages]
 
 
@@ -16,22 +16,21 @@ REFLECT = "reflect"
 GENERATE = "generate"
 
 
-def generation_node(state: MessageGraphevo):
+def generation_node(state: MessageGraphevolution):
     return {"messages": [generate_chain.invoke({"messages": state["messages"]})]}
 
 
-def reflection_node(state: MessageGraphevo):
+def reflection_node(state: MessageGraphevolution):
     res = reflect_chain.invoke({"messages": state["messages"]})
     return {"messages": [HumanMessage(role="user", content=res.content)]}
 
-# only to test the living document
-builder = StateGraph(state_schema=MessageGraphevo)
+builder = StateGraph(state_schema=MessageGraphevolution)
 builder.add_node(GENERATE, generation_node)
 builder.add_node(REFLECT, reflection_node)
 builder.set_entry_point(GENERATE)
 
 
-def should_continue(state: MessageGraphevo):
+def should_continue(state: MessageGraphevolution):
     if len(state["messages"]) >= 4:
         return END
     return REFLECT
