@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2025-12-05
+"- **[Misc]** Added repeated testing comments for living document scheduler feature."
+
+## 2025-12-05
 - **[Refactor]** Renamed `MessageGraphevo` to `MessageGraphevolution` and updated related code.
 
 ## 2025-12-05
