@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2025-12-05
+- **[Refactor]** Renamed `MessageGraphUpdate` to `MessageGraphevo` and updated type hints throughout.
+
+## 2025-12-05
 - **[Documentation]** Updated README.md with polished markdown draft and added installation, usage, contributing, and changelog sections.
 
 ## 2025-12-04
