@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2025-12-05
+- **[Refactor]** Renamed `MessageGraphevo` to `MessageGraphevolution` and updated related code.
+
+## 2025-12-05
 - **[Refactor]** Renamed `MessageGraphUpdate` to `MessageGraphevo` and updated type hints throughout.
 
 ## 2025-12-05
